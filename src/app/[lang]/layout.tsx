@@ -6,6 +6,10 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import { cn } from "@/utils/utils";
 import { Footer } from "@/components/Footer/Footer";
 
+import { Locale, i18n } from "../../../i18n-config";
+import { getDictionary } from "../../../get-dictionary";
+import DictionaryProvider from "@/components/DictionaryProvider/DictionaryProvider";
+
 const baseFont = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -26,17 +30,28 @@ export const metadata: Metadata = {
   description: "Hair Salon",
 };
 
-export default function RootLayout({
+export async function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }));
+}
+
+export type Dictionary = Awaited<ReturnType<typeof getDictionary>>;
+export type LParam = { lang: Locale };
+
+export default async function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: LParam;
 }) {
+  const { lang } = params;
+  const dictionary = await getDictionary(lang);
+
   return (
     <html
-      lang="en"
+      lang={lang}
       className={cn(
         customFonts,
-        // baseFont.className,
         // layout defaults:
         "flex flex-col h-full overflow-hidden"
       )}
@@ -56,13 +71,15 @@ export default function RootLayout({
         )}
       >
         <ThemeProviderWrapped>
-          <header className="sticky top-0 flex flex-col w-full">
-            <NavBar />
-          </header>
-          <main className="-z-10 isolate flex-1">{children}</main>
-          <footer className="-z-20 isolate ">
-            <Footer />
-          </footer>
+          <DictionaryProvider value={dictionary}>
+            <header className="sticky top-0 flex flex-col w-full">
+              <NavBar />
+            </header>
+            <main className="-z-10 isolate flex-1">{children}</main>
+            <footer className="-z-20 isolate ">
+              <Footer />
+            </footer>
+          </DictionaryProvider>
         </ThemeProviderWrapped>
       </body>
     </html>

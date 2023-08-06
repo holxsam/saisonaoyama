@@ -22,8 +22,9 @@ import IMAGE_19 from "../../../public/assets/gallery/43.png";
 import IMAGE_20 from "../../../public/assets/gallery/48.png";
 import { cn } from "@/utils/utils";
 import { Photo } from "./Photo";
+import { Dictionary } from "@/app/[lang]/layout";
 
-export const ImageGallery = () => {
+export const ImageGallery = ({ dictionary: t }: { dictionary: Dictionary }) => {
   return (
     <div className="flex flex-col gap-2 w-full">
       <div className="flex flex-row gap-2 w-full aspect-[2]">

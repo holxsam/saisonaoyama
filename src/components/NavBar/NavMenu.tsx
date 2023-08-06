@@ -6,14 +6,20 @@ import Link from "next/link";
 import { Fragment, ReactNode } from "react";
 import { NavMenuButton } from "./NavMenuButton";
 import { cn } from "@/utils/utils";
+import { useTranslation } from "../DictionaryProvider/DictionaryProvider";
+import { Dictionary } from "@/app/[lang]/layout";
+
+export type NavbarKey = keyof Dictionary["navbar"];
 
 export type NavItem = {
-  label: string;
+  key: NavbarKey;
   href: string;
   icon: ReactNode;
 };
 
 export const NavMenu = ({ links }: { links: NavItem[] }) => {
+  const t = useTranslation();
+
   return (
     <Popover as={Fragment}>
       {({ close, open }) => (
@@ -38,7 +44,7 @@ export const NavMenu = ({ links }: { links: NavItem[] }) => {
             )}
           >
             {links.map((link) => (
-              <li key={link.label}>
+              <li key={link.key}>
                 <Link
                   href={link.href}
                   onClick={close}
@@ -66,9 +72,7 @@ export const NavMenu = ({ links }: { links: NavItem[] }) => {
                     "sm:dark:text-zinc-100 sm:dark:hover:text-zinc-100 sm:dark:focus-visible:text-zinc-100 sm:dark:bg-transparent sm:dark:hover:bg-transparent sm:dark:focus-visible:bg-transparent sm:dark:hover:[box-shadow:inset_0_-2px_0_0_white] sm:dark:focus-visible:[box-shadow:inset_0_-2px_0_0_white]"
                   )}
                 >
-                  {link.label}
-
-                  {/* <span className="absolute bottom-0 w-full h-"></span> */}
+                  {t ? t["navbar"][link.key] : link.key}
                 </Link>
               </li>
             ))}

@@ -7,19 +7,20 @@ import { Logo } from "../Logo/Logo";
 import { ThemeSwitch } from "../ThemeSwitch/ThemeSwitch";
 import { cn } from "@/utils/utils";
 import { useEffect, useState } from "react";
+import LocaleSwitcher from "../LocaleSwitch/LocaleSwitch";
 
 const links: NavItem[] = [
-  { label: "Services", href: "/services", icon: null },
-  { label: "Gallery", href: "/#gallery", icon: null },
-  { label: "Testimonials", href: "/#testimonials", icon: null },
-  { label: "Contact", href: "/contact", icon: null },
-  { label: "About", href: "/about", icon: null },
+  { key: "services", href: "/services", icon: null },
+  { key: "gallery", href: "/#gallery", icon: null },
+  { key: "testimonials", href: "/#testimonials", icon: null },
+  { key: "contact", href: "/contact", icon: null },
+  { key: "about", href: "/about", icon: null },
 ];
 
 const unScrolled =
   "backdrop-blur-none border-b border-transparent bg-transparent";
 const scrolled =
-  "backdrop-blur-lg border-b border-zinc-100/80 dark:border-zinc-800/50 bg-white/80 dark:bg-zinc-900/80  ";
+  "backdrop-blur-lg border-b border-zinc-100/80 dark:border-white/[8%] bg-white/80 dark:bg-zinc-900/80  ";
 
 export const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,6 +30,7 @@ export const NavBar = () => {
   useEffect(() => {
     const scrollContainer = document.body;
     const updateBgColor = () => setIsScrolled(scrollContainer.scrollTop > 140);
+    updateBgColor(); // call it once to start because it is possible to be scrolled down on a page load cus of SSR
     scrollContainer.addEventListener("scroll", updateBgColor);
     return () => {
       scrollContainer.removeEventListener("scroll", updateBgColor);
@@ -51,11 +53,14 @@ export const NavBar = () => {
       />
 
       <div className="flex justify-between items-center pack-content h-full">
-        <Link href="/">
-          <Logo />
-        </Link>
+        <div className="flex gap-2">
+          <Link href="/">
+            <Logo />
+          </Link>
+          <LocaleSwitcher />
+        </div>
 
-        <nav className="flex gap-0 sm:gap-4 h-minzz">
+        <nav className="flex gap-0 sm:gap-4">
           <ThemeSwitch className="z-10" />
           <NavMenu links={links} />
         </nav>

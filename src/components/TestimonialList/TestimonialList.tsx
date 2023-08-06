@@ -5,8 +5,9 @@ import { cn } from "@/utils/utils";
 import Avatar from "../../../public/assets/aoyama-1.jpg";
 import { IconStarFilled } from "@tabler/icons-react";
 import testimonials from "../../utils/testimonials.json";
+import { Dictionary } from "@/app/[lang]/layout";
 
-export const TestimonialList = () => {
+export const TestimonialList = ({ dictionary }: { dictionary: Dictionary }) => {
   return (
     <div className="flex gap-8 w-full p-4 overflow-x-auto sm:custom-scrollbar-tiny no-scrollbar">
       {testimonials.map((t) => (

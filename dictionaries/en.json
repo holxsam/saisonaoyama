@@ -1,0 +1,26 @@
+{
+  "locale": {
+    "en": "English",
+    "ja": "Japanese"
+  },
+  "navbar": {
+    "about": "about",
+    "services": "services",
+    "gallery": "gallery",
+    "contact": "contact",
+    "testimonials": "testimonials"
+  },
+  "owner-message": [
+    "Thank you for your continued patronage of Saison Aoyama, Aoyama celebrated its 20th anniversary on January 4, 2023.",
+    "We would like to take this opportunity to express our deepest gratitude for the support of everyone who has visited our salon.",
+    "All of our stylists will serve you with the utmost care and hospitality, and we look forward to your continued patronage in the future.",
+    "Owner",
+    "Mari Takahashi,"
+  ],
+  "tagline-1": "Japanese style services with an emphasis on comfort all while blending traditional skill with new techniques.",
+  "tagline-2": "",
+  "appointment": "appointment",
+  "welcome": "welcome to",
+  "gallery-description": "We offer a wide variety of styles for men, women, seniors, and children from conservative style to fashionable style. Please don't hesitate to consult with our staff!",
+  "testimonial-description": "See what our clients say about us!"
+}

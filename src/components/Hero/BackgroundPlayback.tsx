@@ -1,4 +1,5 @@
 "use client";
+import { useHasMounted } from "@/hooks/useHasMounted";
 import {
   AnimatePresence,
   AnimationProps,
@@ -29,7 +30,7 @@ export const BackgroundPlayback = () => {
         style={{ y, opacity }}
       >
         <div className="scale-[calc(16/9)] md:scale-100">
-          <div className="flex aspect-square items-center md:aspect-video transition-[opacity] opacity-80 dark:opacity-40">
+          <div className="flex aspect-square items-center md:aspect-video transition-[opacity] opacity-50 dark:opacity-40">
             <video
               tabIndex={-1}
               autoPlay={true}
@@ -51,3 +52,13 @@ export const BackgroundPlayback = () => {
     </>
   );
 };
+
+export default function MountedPlayback() {
+  const mounted = useHasMounted();
+
+  return (
+    <div id="hero-section-bg" className="-z-10 absolute inset-0 -top-16">
+      {mounted && <BackgroundPlayback />}
+    </div>
+  );
+}
