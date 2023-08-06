@@ -16,8 +16,10 @@ const links: NavItem[] = [
   { label: "About", href: "/about", icon: null },
 ];
 
-const unScrolled = "bg-transparent backdrop-blur-none";
-const scrolled = "bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm";
+const unScrolled =
+  "backdrop-blur-none border-b border-transparent bg-transparent";
+const scrolled =
+  "backdrop-blur-lg border-b border-zinc-100/80 dark:border-zinc-800/50 bg-white/80 dark:bg-zinc-900/80  ";
 
 export const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);

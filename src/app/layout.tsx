@@ -59,7 +59,7 @@ export default function RootLayout({
           <header className="sticky top-0 flex flex-col w-full">
             <NavBar />
           </header>
-          <main className="-z-10 isolatezz flex-1">{children}</main>
+          <main className="-z-10 isolate flex-1">{children}</main>
           <footer className="-z-20 isolate ">
             <Footer />
           </footer>
