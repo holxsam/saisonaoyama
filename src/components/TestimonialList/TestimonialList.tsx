@@ -83,15 +83,3 @@ export const Rating = ({
     </div>
   );
 };
-
-// const testimonials = [
-//   {
-//     name: "Risako M.",
-//     location: "Torrance, CA",
-//     date: "10/30/2020",
-//     rating: 5,
-//     review:
-//       "I have been coming here to get my hair done by Mari for over 5 years. She is so warm and always willing to make her customers feel welcomed. If you aren't satisfied, she would redo it!!! So generous. Alway so thankful for her service.",
-//     imgSrc,
-//   },
-// ];

@@ -6,7 +6,7 @@ import { cn } from "@/utils/utils";
 
 export default function Home() {
   return (
-    <div className="isolate flex flex-col gap-20 pb-16">
+    <div className="isolate flex flex-col gap-28 pb-16">
       <HeroSection />
       <div className="pack-content flex flex-col gap-5 p-4">
         <div className="mb-8">

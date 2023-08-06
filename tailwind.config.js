@@ -20,7 +20,7 @@ module.exports = {
       },
       boxShadow: {
         center: "0 0 24px 0 rgba(0,0,0, 0.05)",
-        avatar: "0 0 20px 0 rgba(0,0,0, 0.50)",
+        avatar: "0 0 15px 0 rgba(0,0,0, 0.50)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
