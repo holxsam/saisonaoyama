@@ -27,6 +27,62 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      keyframes: {
+        "fade-in-out": {
+          "0%": { opacity: 0 },
+          "20%, 70%": { opacity: 1 },
+          "100%": { opacity: 0 },
+        },
+        "gradient-y": {
+          "0%, 100%": {
+            "background-size": "400% 400%",
+            "background-position": "center top",
+          },
+          "50%": {
+            "background-size": "200% 200%",
+            "background-position": "center center",
+          },
+        },
+        "gradient-x": {
+          "0%, 100%": {
+            "background-size": "200% 200%",
+            "background-position": "left center",
+          },
+          "50%": {
+            "background-size": "200% 200%",
+            "background-position": "right center",
+          },
+        },
+        "gradient-xy": {
+          "0%, 100%": {
+            "background-size": "400% 400%",
+            "background-position": "left center",
+          },
+          "50%": {
+            "background-size": "200% 200%",
+            "background-position": "right center",
+          },
+        },
+        "bg-pos-x": {
+          "0%": {
+            "background-size": "400% 400%",
+            "background-position": "0% 0%",
+          },
+          "100%": {
+            "background-size": "400% 400%",
+            "background-position": "80% 0%",
+          },
+        },
+      },
+      animation: {
+        "ping-slow": "ping 3s cubic-bezier(0, 0, 0.2, 1) infinite",
+        "fade-in-out":
+          "fade-in-out 0.5s cubic-bezier(.13,.74,.84,.43) 1 forwards",
+        "gradient-x": "gradient-x 5s linear infinite",
+        "gradient-y": "gradient-y 5s linear infinite",
+        "gradient-xy": "gradient-xy 5s linear infinite",
+        "bg-pos-x": "bg-pos-x 200s linear infinite",
+      },
     },
   },
   plugins: [
