@@ -7,6 +7,7 @@ import { Logo } from "../Logo/Logo";
 import { ThemeSwitch } from "../ThemeSwitch/ThemeSwitch";
 import { cn } from "@/utils/utils";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const links: NavItem[] = [
   { key: "gallery", href: "/#gallery", icon: null },
@@ -22,19 +23,22 @@ const scrolled =
   "backdrop-blur-lg border-b border-zinc-100/80 dark:border-white/[8%] bg-white/80 dark:bg-zinc-900/80  ";
 
 export const NavBar = () => {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const boundary = pathname.includes("services") ? 0 : 140;
   const bgColor = isScrolled ? scrolled : unScrolled;
 
   useEffect(() => {
     const scrollContainer = document.body;
-    const updateBgColor = () => setIsScrolled(scrollContainer.scrollTop > 140);
+    const updateBgColor = () =>
+      setIsScrolled(scrollContainer.scrollTop > boundary);
     updateBgColor(); // call it once to start because it is possible to be scrolled down on a page load cus of SSR
     scrollContainer.addEventListener("scroll", updateBgColor);
     return () => {
       scrollContainer.removeEventListener("scroll", updateBgColor);
     };
-  }, []);
+  }, [boundary]);
 
   return (
     <div className="isolate h-16">

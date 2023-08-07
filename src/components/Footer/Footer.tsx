@@ -8,6 +8,8 @@ import {
   IconMapPinFilled,
 } from "@tabler/icons-react";
 import { ReactNode } from "react";
+import { Logo } from "../Logo/Logo";
+import { JapaneseLogo } from "../Logo/JapaneseLogo";
 
 const HOURS: { [key: string]: string } = {
   mon: "9 AM - 6 PM",
@@ -85,7 +87,7 @@ const hours = () => {
 
 const sectionH = (title: string) => {
   return (
-    <h3 className="dark:text-zinc-400 h-[3rem] w-[15rem] pb-[1rem] text-md font-bold uppercase">
+    <h3 className="text-zinc-900 dark:text-zinc-200 w-[15rem] text-md font-bold dark:font-medium uppercase">
       {title}
     </h3>
   );
@@ -114,33 +116,21 @@ export const Footer = ({ dictionary: t }: { dictionary: Dictionary }) => {
   return (
     <div
       id="footer"
-      className="w-full dark:text-zinc-500 dark:bg-zinc-800/20 scroll-mt-20"
+      className="w-full bg-zinc-100 dark:text-zinc-500 dark:bg-zinc-800/20 scroll-mt-20"
     >
       <nav className="pack-content w-full flex flex-col min-h-[20rem] py-[4rem] px-[2rem]">
-        <div className="flex w-full flex-col justify-center items-center pb-[3rem] mx-auto gap-[3rem]">
-          <div className="w-full flex flex-col gap-[0.5rem] justify-between">
-            <h2 className="flex dark:text-zinc-400 flex-1 uppercase">
-              <span className="leading-[0.5rem]">
-                <span className="flex flex-row flex-wrap text-7xl font-light">
-                  Saison
-                  <span className="font-bold text-opacity-0">Aoyama</span>
-                </span>
-                <br />
-                <span>
-                  <span className="font-semilight">セゾン</span>
-                  <span className="font-bold">アオヤマ</span>
-                </span>
-              </span>
-            </h2>
+        <div className="w-full flex flex-col pb-[3rem] gap-20 items-center">
+          <div className="md:w-full w-[300px] flex flex-col justify-between">
+            <Logo />
+            <JapaneseLogo />
             <div className="flex gap-4 items-center">
-              <h3 className="text-sm font-light uppercase">{socialMedia}</h3>
-              <div className="w-[1px] h-[1rem] bg-black dark:bg-zinc-500"></div>
-              <div className="flex gap-3 justify-center">
+              <div className="flex gap-1 justify-center">
                 {SOCIALS.map((social, index) => {
                   return (
                     <a
                       key={social.name}
                       href={social.link}
+                      title={social.name}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -152,10 +142,10 @@ export const Footer = ({ dictionary: t }: { dictionary: Dictionary }) => {
             </div>
           </div>
 
-          <div className="lg:w-full w-min flex flex-row flex-wrap justify-between gap-[5rem]">
-            <div className="flex flex-col flex-wrap w-min">
+          <div className="flex flex-col justify-between w-[300px] gap-20 md:flex-row md:gap-0 md:w-full">
+            <div className="flex flex-col gap-4">
               {sectionH(contactUs)}
-              <ul className="text-sm flex flex-col w-[15rem] leading-loose gap-3">
+              <ul className="text-sm flex flex-col w-[15rem] gap-1">
                 <li>
                   <a
                     className="flex flex-row nowrap gap-2 hover:underline"
@@ -199,43 +189,43 @@ export const Footer = ({ dictionary: t }: { dictionary: Dictionary }) => {
                 </li>
               </ul>
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-4">
               {sectionH(operatingHours)}
-              <dl className="text-sm w-[15rem] grid grid-rows-7 gap-3">
+              <dl className="text-sm w-[15rem] grid grid-rows-7 gap-1 text-zinc-500">
                 {/* {hours()} */}
                 <div className="w-[12rem] flex justify-between">
-                  <dt className="uppercase font-semibold">{mon}</dt>
-                  <dd className="uppercase">{`9 ${am} - 6 ${pm}`}</dd>
+                  <dt className="capitalize font-bold">{mon}</dt>
+                  <dd className="">{`9am - 6pm`}</dd>
                 </div>
                 <div className="w-[12rem] flex justify-between">
-                  <dt className="uppercase font-semibold">{tues}</dt>
-                  <dd className="uppercase">{`9 ${am} - 6 ${pm}`}</dd>
+                  <dt className="capitalize font-bold">{tues}</dt>
+                  <dd className="">{`9am - 6pm`}</dd>
                 </div>
                 <div className="w-[12rem] flex justify-between">
-                  <dt className="uppercase font-semibold">{wed}</dt>
-                  <dd className="uppercase">{`9 ${am} - 6 ${pm}`}</dd>
+                  <dt className="capitalize font-bold">{wed}</dt>
+                  <dd className="">{`9am - 6pm`}</dd>
                 </div>
                 <div className="w-[12rem] flex justify-between">
-                  <dt className="uppercase font-semibold">{thurs}</dt>
-                  <dd className="uppercase">{`9 ${am} - 6 ${pm}`}</dd>
+                  <dt className="capitalize font-bold">{thurs}</dt>
+                  <dd className="">{`9am - 6pm`}</dd>
                 </div>
                 <div className="w-[12rem] flex justify-between">
-                  <dt className="uppercase font-semibold">{fri}</dt>
-                  <dd className="uppercase">{`9 ${am} - 6 ${pm}`}</dd>
+                  <dt className="capitalize font-bold">{fri}</dt>
+                  <dd className="">{`9am - 6pm`}</dd>
                 </div>
                 <div className="w-[12rem] flex justify-between">
-                  <dt className="uppercase font-semibold">{sat}</dt>
-                  <dd className="uppercase">{`9 ${am} - 6 ${pm}`}</dd>
+                  <dt className="capitalize font-bold">{sat}</dt>
+                  <dd className="">{`9am - 6pm`}</dd>
                 </div>
                 <div className="w-[12rem] flex justify-between">
-                  <dt className="uppercase font-semibold">{sun}</dt>
-                  <dd className="uppercase">{`9 ${am} - 6 ${pm}`}</dd>
+                  <dt className="capitalize font-bold">{sun}</dt>
+                  <dd className="">{`9am - 6pm`}</dd>
                 </div>
               </dl>
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-4">
               {sectionH(faq)}
-              <ul className="text-sm w-[15rem] flex flex-col gap-3">
+              <ul className="text-sm w-[15rem] flex flex-col gap-2">
                 {/* {FAQLIST.map((faq, index) => {
                   return (
                     <li key={faq} className="capitalize">

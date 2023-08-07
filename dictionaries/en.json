@@ -52,7 +52,10 @@
 
     "disclaimer": "Prices may vary by beautician. Please ask your beautician of choice for their prices.",
     "appointment": "Schedule",
-    "appointment-only": " Please note that we do not accept walk ins. Once you are ready, you can make an appointment by calling us!"
+    "appointment-only": " Please note that we do not accept walk ins. Once you are ready, you can make an appointment by calling us!",
+
+    "location": "location",
+    "location-desc": "Now that you've made an appointment, you can find your way to Saison Aoyama using google maps! Simply click \"View Larger Map\" or \"Get Directions\" on the map below to start navigation."
   },
   "footer": {
     "social-media": "social media",
@@ -60,9 +63,9 @@
     "operating-hours": "operating hours",
     "faq": "faq",
     "mon": "mon",
-    "tues": "tues",
+    "tues": "tue",
     "wed": "wed",
-    "thurs": "thurs",
+    "thurs": "thu",
     "fri": "fri",
     "sat": "sat",
     "sun": "sun",
