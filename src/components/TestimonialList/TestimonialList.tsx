@@ -1,10 +1,25 @@
 "use client";
 
 import { cn } from "@/utils/utils";
-import Avatar from "../../../public/assets/aoyama-1.jpg";
-import { IconStarFilled } from "@tabler/icons-react";
-import testimonials from "../../utils/testimonials.json";
+import { IconStarFilled, IconStarHalfFilled } from "@tabler/icons-react";
 import { Dictionary } from "@/app/[lang]/layout";
+import testimonials from "../../utils/testimonials.json";
+
+import a from "../../../public/assets/yelp/a.jpg";
+import b from "../../../public/assets/yelp/b.jpg";
+import c from "../../../public/assets/yelp/c.jpg";
+import d from "../../../public/assets/yelp/d.jpg";
+import e from "../../../public/assets/yelp/e.jpg";
+import f from "../../../public/assets/yelp/f.jpg";
+import g from "../../../public/assets/yelp/g.jpg";
+import h from "../../../public/assets/yelp/h.jpg";
+import i from "../../../public/assets/yelp/i.jpg";
+import j from "../../../public/assets/yelp/j.jpg";
+import Image from "next/image";
+
+const images = [a, b, c, d, e, f, g, h, i, j];
+
+const reviews = testimonials.map((p, i) => ({ ...p, imgSrc: images[i].src }));
 
 export const TestimonialList = ({
   dictionary: t,
@@ -13,7 +28,7 @@ export const TestimonialList = ({
 }) => {
   return (
     <div className="relative flex gap-8 w-full p-4 pb-12 overflow-x-auto sm:scrollbar-tiny-white no-scrollbar">
-      {testimonials.map((t) => (
+      {reviews.map((t) => (
         <Testimonial key={t.name + t.date} {...t} />
       ))}
     </div>
@@ -43,9 +58,17 @@ export const Testimonial = ({
         "relative flex flex-col justify-end items-center h-[400px] min-w-[320px]"
       )}
     >
-      <div className="absolute top-0 rounded-full w-20 aspect-square">
+      <div className="absolute top-0 rounded-full w-20 aspect-square shadow-center-lg">
         <div className="overflow-hidden w-full h-full rounded-[inherit]">
-          <img src={Avatar.src} alt="" className="w-full h-full object-cover" />
+          {/* <img src={Avatar.src} alt="" className="w-full h-full object-cover" /> */}
+          <Image
+            src={imgSrc}
+            alt=""
+            width={100}
+            height={100}
+            quality={100}
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
 
@@ -76,10 +99,14 @@ export const Rating = ({
   maxRating?: number;
 }) => {
   const stars = [...Array(rating).keys()];
+  const unfilled = [...Array(maxRating - rating).keys()];
   return (
     <div className="flex gap-1 w-min text-red-500">
       {stars.map((i) => (
         <IconStarFilled key={i} size={16} />
+      ))}
+      {unfilled.map((i) => (
+        <IconStarHalfFilled key={i} size={16} />
       ))}
     </div>
   );

@@ -92,7 +92,10 @@ const sectionH = (title: string) => {
 
 export const Footer = () => {
   return (
-    <div className="w-full dark:text-zinc-500 dark:bg-zinc-800/20">
+    <div
+      id="footer"
+      className="w-full dark:text-zinc-500 dark:bg-zinc-800/20 scroll-mt-20"
+    >
       <nav className="pack-content w-full flex flex-col min-h-[20rem] py-[4rem] px-[2rem]">
         <div className="flex w-full flex-col justify-center items-center pb-[3rem] mx-auto gap-[3rem]">
           <div className="w-full flex flex-col gap-[0.5rem] justify-between">

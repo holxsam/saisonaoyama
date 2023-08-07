@@ -12,8 +12,8 @@ const links: NavItem[] = [
   { key: "gallery", href: "/#gallery", icon: null },
   { key: "testimonials", href: "/#testimonials", icon: null },
   { key: "about", href: "/#about", icon: null },
+  { key: "contact", href: "/#footer", icon: null },
   { key: "services", href: "/services", icon: null },
-  { key: "contact", href: "/contact", icon: null },
 ];
 
 const unScrolled =
