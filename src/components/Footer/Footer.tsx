@@ -1,3 +1,4 @@
+import { Dictionary } from "@/app/[lang]/layout";
 import {
   IconBrandInstagram,
   IconBrandFacebook,
@@ -25,10 +26,10 @@ export const TELADDR = "+3107910118";
 const EMAIL = "saisonaoyama@gmail.com";
 
 const FAQLIST = [
-  "Wifi Available",
-  "No Walk-Ins",
-  "Appointment Only",
-  "Closed on National Holidays",
+  "wifi available",
+  "no walk-ins",
+  "appointment only",
+  "closed on national holidays",
 ];
 
 type SocialsInfo = {
@@ -90,7 +91,26 @@ const sectionH = (title: string) => {
   );
 };
 
-export const Footer = () => {
+export const Footer = ({ dictionary: t }: { dictionary: Dictionary }) => {
+  const s = t["footer"];
+  const socialMedia = s["social-media"];
+  const contactUs = s["contact-us"];
+  const operatingHours = s["operating-hours"];
+  const faq = s["faq"];
+  const mon = s["mon"];
+  const tues = s["tues"];
+  const wed = s["wed"];
+  const thurs = s["thurs"];
+  const fri = s["fri"];
+  const sat = s["sat"];
+  const sun = s["sun"];
+  const am = s["am"];
+  const pm = s["pm"];
+  const wifiAvailable = s["wifi-available"];
+  const noWalkIns = s["no-walk-ins"];
+  const appointmentOnly = s["appointment-only"];
+  const closedOnNationalHolidays = s["closed-on-national-holdiays"];
+
   return (
     <div
       id="footer"
@@ -113,7 +133,7 @@ export const Footer = () => {
               </span>
             </h2>
             <div className="flex gap-4 items-center">
-              <h3 className="text-sm font-light uppercase">Social Media</h3>
+              <h3 className="text-sm font-light uppercase">{socialMedia}</h3>
               <div className="w-[1px] h-[1rem] bg-black dark:bg-zinc-500"></div>
               <div className="flex gap-3 justify-center">
                 {SOCIALS.map((social, index) => {
@@ -134,7 +154,7 @@ export const Footer = () => {
 
           <div className="lg:w-full w-min flex flex-row flex-wrap justify-between gap-[5rem]">
             <div className="flex flex-col flex-wrap w-min">
-              {sectionH("Contact Us")}
+              {sectionH(contactUs)}
               <ul className="text-sm flex flex-col w-[15rem] leading-loose gap-3">
                 <li>
                   <a
@@ -180,17 +200,61 @@ export const Footer = () => {
               </ul>
             </div>
             <div className="flex flex-col">
-              {sectionH("Operating Hours")}
+              {sectionH(operatingHours)}
               <dl className="text-sm w-[15rem] grid grid-rows-7 gap-3">
-                {hours()}
+                {/* {hours()} */}
+                <div className="w-[12rem] flex justify-between">
+                  <dt className="uppercase font-semibold">{mon}</dt>
+                  <dd className="uppercase">{`9 ${am} - 6 ${pm}`}</dd>
+                </div>
+                <div className="w-[12rem] flex justify-between">
+                  <dt className="uppercase font-semibold">{tues}</dt>
+                  <dd className="uppercase">{`9 ${am} - 6 ${pm}`}</dd>
+                </div>
+                <div className="w-[12rem] flex justify-between">
+                  <dt className="uppercase font-semibold">{wed}</dt>
+                  <dd className="uppercase">{`9 ${am} - 6 ${pm}`}</dd>
+                </div>
+                <div className="w-[12rem] flex justify-between">
+                  <dt className="uppercase font-semibold">{thurs}</dt>
+                  <dd className="uppercase">{`9 ${am} - 6 ${pm}`}</dd>
+                </div>
+                <div className="w-[12rem] flex justify-between">
+                  <dt className="uppercase font-semibold">{fri}</dt>
+                  <dd className="uppercase">{`9 ${am} - 6 ${pm}`}</dd>
+                </div>
+                <div className="w-[12rem] flex justify-between">
+                  <dt className="uppercase font-semibold">{sat}</dt>
+                  <dd className="uppercase">{`9 ${am} - 6 ${pm}`}</dd>
+                </div>
+                <div className="w-[12rem] flex justify-between">
+                  <dt className="uppercase font-semibold">{sun}</dt>
+                  <dd className="uppercase">{`9 ${am} - 6 ${pm}`}</dd>
+                </div>
               </dl>
             </div>
             <div className="flex flex-col">
-              {sectionH("FAQ")}
+              {sectionH(faq)}
               <ul className="text-sm w-[15rem] flex flex-col gap-3">
-                {FAQLIST.map((faq, index) => {
-                  return <li key={faq}>{faq}</li>;
-                })}
+                {/* {FAQLIST.map((faq, index) => {
+                  return (
+                    <li key={faq} className="capitalize">
+                      {faq}
+                    </li>
+                  );
+                })} */}
+                <li key={faq} className="capitalize">
+                  {wifiAvailable}
+                </li>
+                <li key={faq} className="capitalize">
+                  {noWalkIns}
+                </li>
+                <li key={faq} className="capitalize">
+                  {appointmentOnly}
+                </li>
+                <li key={faq} className="capitalize">
+                  {closedOnNationalHolidays}
+                </li>
               </ul>
             </div>
           </div>
