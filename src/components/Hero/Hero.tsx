@@ -24,7 +24,7 @@ export const HeroSection = ({ dictionary: t }: { dictionary: Dictionary }) => {
           >
             {welcome}
           </span>
-          <div
+          <h1
             className={cn(
               "flex flex-wrap items-center justify-center text-center text-[clamp(60px,8vw,100px)] [line-height:1.2] uppercase "
             )}
@@ -35,7 +35,7 @@ export const HeroSection = ({ dictionary: t }: { dictionary: Dictionary }) => {
             <span className="font-extrabold text-zinc-800 dark:text-white">
               Aoyama
             </span>
-          </div>
+          </h1>
         </div>
 
         <div

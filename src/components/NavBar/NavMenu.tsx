@@ -3,12 +3,13 @@
 import { Popover } from "@headlessui/react";
 
 import Link from "next/link";
-import { Fragment, ReactNode } from "react";
+import { Fragment, ReactNode, useMemo } from "react";
 import { NavMenuButton } from "./NavMenuButton";
 import { cn } from "@/utils/utils";
 import { useTranslation } from "../DictionaryProvider/DictionaryProvider";
 import { Dictionary } from "@/app/[lang]/layout";
 import LocaleSwitcher from "../LocaleSwitch/LocaleSwitch";
+import useLocale from "@/hooks/useLocale";
 
 export type NavbarKey = keyof Dictionary["navbar"];
 
@@ -20,6 +21,12 @@ export type NavItem = {
 
 export const NavMenu = ({ links }: { links: NavItem[] }) => {
   const t = useTranslation();
+  const lang = useLocale();
+
+  const localedLinks = useMemo(
+    () => links.map((link) => ({ ...link, href: `/${lang}${link.href}` })),
+    [links, lang]
+  );
 
   return (
     <Popover as={Fragment}>
@@ -44,7 +51,7 @@ export const NavMenu = ({ links }: { links: NavItem[] }) => {
               "sm:visible sm:opacity-100 sm:translate-y-0"
             )}
           >
-            {links.map((link) => (
+            {localedLinks.map((link) => (
               <li key={link.key}>
                 <Link
                   href={link.href}
