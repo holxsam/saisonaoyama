@@ -60,7 +60,7 @@ export default function RootLayout({
             <NavBar />
           </header>
           <main className="-z-10 isolatezz flex-1">{children}</main>
-          <footer className="-z-20 isolate ">
+          <footer className="-z-20 isolate">
             <Footer />
           </footer>
         </ThemeProviderWrapped>
