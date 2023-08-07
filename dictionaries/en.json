@@ -53,5 +53,24 @@
     "disclaimer": "Prices may vary by beautician. Please ask your beautician of choice for their prices.",
     "appointment": "Schedule",
     "appointment-only": " Please note that we do not accept walk ins. Once you are ready, you can make an appointment by calling us!"
+  },
+  "footer": {
+    "social-media": "social media",
+    "contact-us": "contact us",
+    "operating-hours": "operating hours",
+    "faq": "faq",
+    "mon": "mon",
+    "tues": "tues",
+    "wed": "wed",
+    "thurs": "thurs",
+    "fri": "fri",
+    "sat": "sat",
+    "sun": "sun",
+    "pm": "pm",
+    "am": "am",
+    "wifi-available": "wifi available",
+    "no-walk-ins": "no walk-ins",
+    "appointment-only": "appointment only",
+    "closed-on-national-holdiays": "closed on national holidays"
   }
 }
