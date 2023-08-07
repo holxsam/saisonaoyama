@@ -26,4 +26,7 @@
   .custom-scrollbar-tiny {
     @apply scrollbar-thin scrollbar-thumb-neutral-600/50 hover:scrollbar-track-neutral-800/20 hover:scrollbar-thumb-neutral-500;
   }
+  .scrollbar-tiny-white {
+    @apply scrollbar-thin scrollbar-thumb-white/80 scrollbar-track-zinc-800/30 hover:scrollbar-thumb-white;
+  }
 }

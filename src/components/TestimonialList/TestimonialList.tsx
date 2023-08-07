@@ -12,7 +12,7 @@ export const TestimonialList = ({
   dictionary: Dictionary;
 }) => {
   return (
-    <div className="flex gap-8 w-full p-4 overflow-x-auto sm:custom-scrollbar-tiny no-scrollbar">
+    <div className="relative flex gap-8 w-full p-4 pb-12 overflow-x-auto sm:scrollbar-tiny-white no-scrollbar">
       {testimonials.map((t) => (
         <Testimonial key={t.name + t.date} {...t} />
       ))}
@@ -43,7 +43,7 @@ export const Testimonial = ({
         "relative flex flex-col justify-end items-center h-[400px] min-w-[320px]"
       )}
     >
-      <div className="absolute top-0 rounded-full w-20 aspect-square shadow-avatar ">
+      <div className="absolute top-0 rounded-full w-20 aspect-square">
         <div className="overflow-hidden w-full h-full rounded-[inherit]">
           <img src={Avatar.src} alt="" className="w-full h-full object-cover" />
         </div>
@@ -51,19 +51,16 @@ export const Testimonial = ({
 
       <div
         className={cn(
-          "rounded-2xl flex flex-col items-center gap-6 w-full h-[90%] bg-red-500 p-10 pt-20",
-          "bg-white shadow-center",
-          "dark:bg-zinc-800/40"
+          "rounded-lg flex flex-col items-center gap-6 w-full h-[90%] bg-red-500 p-10 pt-20",
+          "bg-white shadow-center"
         )}
       >
-        <h3 className="text-center text-lg font-bold">{name}</h3>
-        <h3 className="text-center text-sm italic text-zinc-400 dark:text-zinc-600 dark:font-medium">
+        <h3 className="text-center text-lg font-bold text-zinc-900">{name}</h3>
+        <h3 className="text-center text-xs text-zinc-400">
           {date} - {location}
         </h3>
         <div className="overflow-y-auto no-scrollbar h-full pb-2">
-          <p className="text-sm font-medium text-zinc-500 dark:text-zinc-500">
-            {review}
-          </p>
+          <p className="text-sm text-zinc-900">{review}</p>
         </div>
         <Rating rating={rating} />
       </div>
@@ -80,9 +77,9 @@ export const Rating = ({
 }) => {
   const stars = [...Array(rating).keys()];
   return (
-    <div className="flex gap-1 w-min text-rose-500 dark:text-rose-600">
+    <div className="flex gap-1 w-min text-red-500">
       {stars.map((i) => (
-        <IconStarFilled key={i} size={14} />
+        <IconStarFilled key={i} size={16} />
       ))}
     </div>
   );

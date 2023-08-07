@@ -36,15 +36,16 @@ export default async function Home({ params }: { params: LParam }) {
         <ImageGallery dictionary={t} />
       </div>
 
-      <div className="flex flex-col gap-12">
+      <div className="relative isolate flex flex-col gap-12 bg-gradient-to-br from-red-500 to-blue-500 pt-20">
+        <div className="-z-10 absolute inset-0 [background:repeating-linear-gradient(-45deg,rgba(0,0,0,0.05),rgba(0,0,0,0.05)_25px,transparent_25px,transparent_50px)] opacity-80 animate-bg-pos-x" />
         <div className="pack-content flex flex-col items-center gap-4">
           <h2
             id="testimonials"
-            className="scroll-mt-20 text-5xl font-extrabold capitalize w-min whitespace-nowrap text-zinc-800 dark:text-zinc-50"
+            className="scroll-mt-20 text-5xl font-extrabold capitalize w-min whitespace-nowrap text-white"
           >
             {testimonials}
           </h2>
-          <p className="text-center font-semibold text-zinc-400 dark:text-zinc-600 max-w-md">
+          <p className="text-center font-semibold  max-w-md text-zinc-200">
             {testimonialDesc}
           </p>
         </div>

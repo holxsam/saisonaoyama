@@ -170,7 +170,7 @@ export default async function Services({ params }: { params: LParam }) {
             <a
               href={`tel:${TELADDR}`}
               className={cn(
-                "rounded-full flex items-center gap-2 outline-none appearance-none pl-4 pr-6 py-3 font-mono font-bold text-2xl zzsm:text-7xl hover:underline focus-visible:underline whitespace-nowrap w-min ",
+                "rounded-full flex items-center gap-2 outline-none appearance-none pl-4 pr-6 py-3 font-mono font-bold text-2xl hover:underline focus-visible:underline whitespace-nowrap w-min ",
                 "text-white animate-gradient-x bg-gradient-to-r from-rose-500 to-blue-500"
               )}
             >
