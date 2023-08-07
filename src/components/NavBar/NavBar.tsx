@@ -13,8 +13,8 @@ const links: NavItem[] = [
   { key: "services", href: "/services", icon: null },
   { key: "gallery", href: "/#gallery", icon: null },
   { key: "testimonials", href: "/#testimonials", icon: null },
+  { key: "about", href: "/#about", icon: null },
   { key: "contact", href: "/contact", icon: null },
-  { key: "about", href: "/about", icon: null },
 ];
 
 const unScrolled =
@@ -57,7 +57,7 @@ export const NavBar = () => {
           <Link href="/">
             <Logo />
           </Link>
-          <LocaleSwitcher />
+          {/* <LocaleSwitcher /> */}
         </div>
 
         <nav className="flex gap-0 sm:gap-4">

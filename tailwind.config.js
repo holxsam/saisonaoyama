@@ -20,6 +20,7 @@ module.exports = {
       },
       boxShadow: {
         center: "0 0 24px 0 rgba(0,0,0, 0.05)",
+        "center-lg": "0 0 24px 0 rgba(0,0,0, 0.1)",
         avatar: "0 0 15px 0 rgba(0,0,0, 0.50)",
       },
       backgroundImage: {
