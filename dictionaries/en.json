@@ -36,19 +36,22 @@
     "mens-haircut": "men",
     "kids-haircut": "kids",
 
-    "wash-blow": "wash and blow dry",
-    "head-spa": "head spa massage",
+    "haircare": "hair care",
+    "wash-blow": "wash & blow",
+    "head-spa": "head spa",
     "retouch": "retouch",
 
     "hair-dye": "hair dye",
-    "single-color": "single",
-    "double-color": "double",
+    "single-color": "single color",
+    "double-color": "double color",
     "treatment": "treatment",
 
     "perm": "perm",
     "regular-perm": "regular perm",
     "straight-perm": "straight perm",
 
-    "disclaimer": "Prices may vary by beautician. Please ask the beautician of your choice for their prices."
+    "disclaimer": "Prices may vary by beautician. Please ask your beautician of choice for their prices.",
+    "appointment": "Schedule",
+    "appointment-only": " Please note that we do not accept walk ins. Once you are ready, you can make an appointment by calling us!"
   }
 }

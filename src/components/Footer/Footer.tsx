@@ -20,8 +20,8 @@ const HOURS: { [key: string]: string } = {
 
 const ADDRESS = "3934 Sepulveda Blvd.";
 const CITY = "Torrance, CA 90505";
-const TEL = "310-791-0118";
-const TELADDR = "+3107910118";
+export const TEL = "310-791-0118";
+export const TELADDR = "+3107910118";
 const EMAIL = "saisonaoyama@gmail.com";
 
 const FAQLIST = [
@@ -74,7 +74,7 @@ const SOCIALS: SocialsInfo[] = [
 const hours = () => {
   return Object.keys(HOURS).map((day) => {
     return (
-      <div className="w-[12rem] flex justify-between">
+      <div key={day} className="w-[12rem] flex justify-between">
         <dt className="uppercase font-semibold">{day}</dt>
         <dd className="">{HOURS[day]}</dd>
       </div>
