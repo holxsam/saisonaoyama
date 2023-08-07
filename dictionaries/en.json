@@ -28,5 +28,27 @@
   "our-story-desc": "Since we started as the new birth Aoyama in 2003, we have many countenances from customers as to our friendliness, accurate technique and reasonable price. Our policy is to bend our ear to our customer and sometimes suggest the best style for each customers. Our accrete service with hospitality will never change.",
   "our-vision-desc": "We value the asset of Japanese salon's traditional technique and services, always seek for new skills and better products keenly. In order to provide better services, we will continue to attend seminars, exchange information with Japanese salons and test new products.",
   "about-header-desc": "All beauticians are trained for  Japanese traditional techniques and services and merged with new  sensation of hair cut.",
-  "about-us-title": "About Us"
+  "about-us-title": "About Us",
+
+  "services": {
+    "haircut": "haircut",
+    "womens-haircut": "women",
+    "mens-haircut": "men",
+    "kids-haircut": "kids",
+
+    "wash-blow": "wash and blow dry",
+    "head-spa": "head spa massage",
+    "retouch": "retouch",
+
+    "hair-dye": "hair dye",
+    "single-color": "single",
+    "double-color": "double",
+    "treatment": "treatment",
+
+    "perm": "perm",
+    "regular-perm": "regular perm",
+    "straight-perm": "straight perm",
+
+    "disclaimer": "Prices may vary by beautician. Please ask the beautician of your choice for their prices."
+  }
 }

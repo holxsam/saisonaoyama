@@ -7,13 +7,12 @@ import { Logo } from "../Logo/Logo";
 import { ThemeSwitch } from "../ThemeSwitch/ThemeSwitch";
 import { cn } from "@/utils/utils";
 import { useEffect, useState } from "react";
-import LocaleSwitcher from "../LocaleSwitch/LocaleSwitch";
 
 const links: NavItem[] = [
-  { key: "services", href: "/services", icon: null },
   { key: "gallery", href: "/#gallery", icon: null },
   { key: "testimonials", href: "/#testimonials", icon: null },
   { key: "about", href: "/#about", icon: null },
+  { key: "services", href: "/services", icon: null },
   { key: "contact", href: "/contact", icon: null },
 ];
 
@@ -57,7 +56,6 @@ export const NavBar = () => {
           <Link href="/">
             <Logo />
           </Link>
-          {/* <LocaleSwitcher /> */}
         </div>
 
         <nav className="flex gap-0 sm:gap-4">
