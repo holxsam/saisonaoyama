@@ -77,7 +77,7 @@ export default async function RootLayout({
             </header>
             <main className="-z-10 isolate flex-1">{children}</main>
             <footer className="-z-20 isolate ">
-              <Footer />
+              <Footer dictionary={dictionary} />
             </footer>
           </DictionaryProvider>
         </ThemeProviderWrapped>

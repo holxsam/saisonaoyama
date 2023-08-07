@@ -53,5 +53,24 @@
 
     "appointment": "予定",
     "appointment-only": "ご予約はお電話で（ウォークインは受け付けておりませんのでご注意ください"
+  },
+  "footer": {
+    "social-media": "ソーシャルメディア",
+    "contact-us": "お問い合わせ",
+    "operating-hours": "営業時間",
+    "faq": "よくある質問",
+    "mon": "月曜日",
+    "tues": "火曜日",
+    "wed": "水曜日",
+    "thurs": "木曜日",
+    "fri": "金曜日",
+    "sat": "土曜日",
+    "sun": "日曜日",
+    "pm": "午後",
+    "am": "午前",
+    "wifi-available": "ネットアクセスあり",
+    "no-walk-ins": "ウォークイン禁止",
+    "appointment-only": "予約のみ",
+    "closed-on-national-holdiays": "ナショナルホリデー除"
   }
 }
