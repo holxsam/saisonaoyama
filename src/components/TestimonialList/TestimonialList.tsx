@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/utils/utils";
-import { IconStarFilled, IconStarHalfFilled } from "@tabler/icons-react";
+import { IconStar, IconStarFilled } from "@tabler/icons-react";
 import { Dictionary } from "@/app/[lang]/layout";
 import testimonials from "../../utils/testimonials.json";
 
@@ -106,7 +106,7 @@ export const Rating = ({
         <IconStarFilled key={i} size={16} />
       ))}
       {unfilled.map((i) => (
-        <IconStarHalfFilled key={i} size={16} />
+        <IconStar key={i} size={16} />
       ))}
     </div>
   );
