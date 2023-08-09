@@ -1,27 +1,39 @@
 "use client";
+
 import { Dialog } from "@headlessui/react";
 import { IconX } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
-import { useState } from "react";
+import { ImageProps } from "next/image";
+import { cloneElement, isValidElement, useState } from "react";
+import { useTranslation } from "../DictionaryProvider/DictionaryProvider";
 
-export type PhotoEnlargeProps = {
-  src: string;
+const replaceImageProps: Partial<ImageProps> = {
+  fill: false,
+  width: 700,
+  height: 700,
+  className: "w-full h-full object-contain",
 };
 
-export const PhotoEnlarge = ({ src }: PhotoEnlargeProps) => {
+export type PhotoEnlargeProps = {
+  children: React.ReactElement<ImageProps>;
+};
+
+export const PhotoEnlarge = ({ children }: PhotoEnlargeProps) => {
+  const t = useTranslation();
   let [isOpen, setIsOpen] = useState(false);
 
   const close = () => setIsOpen(false);
   const open = () => setIsOpen(true);
 
+  // just doing this so prettier doesn't make the ternary ugly:
+  const isValid = isValidElement(children);
+  const Photo = isValid ? cloneElement(children, replaceImageProps) : <></>;
+
   return (
     <>
-      <button
-        type="button"
-        className="absolute inset-0 cursor-pointer"
-        onClick={open}
-      ></button>
+      <button type="button" onClick={open} className="relative h-full w-full">
+        {children}
+      </button>
 
       <AnimatePresence>
         {isOpen && (
@@ -52,14 +64,7 @@ export const PhotoEnlarge = ({ src }: PhotoEnlargeProps) => {
                   exit={{ y: "100vh", opacity: 0 }}
                   transition={{ ease: "easeOut", duration: 0.2 }}
                 >
-                  <Image
-                    src={src}
-                    alt=""
-                    width={700}
-                    height={700}
-                    quality={100}
-                    className="w-full h-full object-contain"
-                  />
+                  {Photo}
                 </Dialog.Panel>
                 <motion.div
                   className="relative"
@@ -71,10 +76,10 @@ export const PhotoEnlarge = ({ src }: PhotoEnlargeProps) => {
                   <button
                     type="button"
                     onClick={close}
-                    className="absolute top-3 right-0 flex gap-1 justify-center items-center w-full text-zinc-300 hover:text-rose-500 hover:font-bold uppercase font-medium text-sm"
+                    className="absolute top-3 right-0 flex gap-1 justify-center items-center w-full text-zinc-400 hover:text-white uppercase font-medium text-sm"
                   >
-                    <span className="">Close</span>
-                    <IconX />
+                    <span className="">{t?.["close"]}</span>
+                    <IconX size={20} stroke={2.5} />
                   </button>
                 </motion.div>
               </div>

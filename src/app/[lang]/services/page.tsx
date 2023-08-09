@@ -5,14 +5,11 @@ import {
   IconHeart,
   IconPalette,
   IconPhone,
-  IconPhoneCall,
-  IconPhoneFilled,
   IconRipple,
   IconScissors,
 } from "@tabler/icons-react";
 import { TEL, TELADDR } from "@/components/Footer/Footer";
 import { cn } from "@/utils/utils";
-import dynamic from "next/dynamic";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -40,7 +37,6 @@ const ServicePrice = ({ label, price }: ServicePriceProps) => {
 
 export default async function Services({ params }: { params: LParam }) {
   const t = await getDictionary(params.lang);
-
   const s = t["services"];
 
   const services = t["navbar"]["services"];
@@ -72,7 +68,7 @@ export default async function Services({ params }: { params: LParam }) {
   const locationdesc = s["location-desc"];
 
   return (
-    <div className="pack-content py-16">
+    <div className="pack-content pb-32 pt-16">
       <div className="flex flex-col">
         <ol className="flex flex-col gap-32">
           <li className="flex flex-col gap-12">
@@ -169,7 +165,7 @@ export default async function Services({ params }: { params: LParam }) {
             </ul>
           </li>
           <li className="flex flex-col gap-8 sm:items-center">
-            <span className="flex justify-normal sm:justify-center gap-8 text-5xl sm:text-5xl font-extrabold ">
+            <span className="flex justify-normal sm:justify-center gap-8 text-5xl sm:text-5xl font-extrabold">
               <span className="w-4 text-zinc-300 dark:text-zinc-700">2</span>
               <h2 className="capitalize text-zinc-800 dark:text-white">
                 {appointment}

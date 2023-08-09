@@ -2,7 +2,7 @@
 
 import { Popover } from "@headlessui/react";
 
-import Link from "next/link";
+import Link, { LinkProps } from "next/link";
 import { Fragment, ReactNode, useMemo } from "react";
 import { NavMenuButton } from "./NavMenuButton";
 import { cn } from "@/utils/utils";
@@ -17,6 +17,7 @@ export type NavItem = {
   key: NavbarKey;
   href: string;
   icon: ReactNode;
+  scroll?: LinkProps["scroll"];
 };
 
 export const NavMenu = ({ links }: { links: NavItem[] }) => {
@@ -55,6 +56,7 @@ export const NavMenu = ({ links }: { links: NavItem[] }) => {
               <li key={link.key}>
                 <Link
                   href={link.href}
+                  scroll={link.scroll}
                   onClick={close}
                   className={cn(
                     // mobile/desktop/light/dark:

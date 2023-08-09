@@ -1,25 +1,23 @@
-import { cn } from "@/utils/utils";
 import { PhotoEnlarge } from "./PhotoEnlarge";
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 
 export type PhotoProps = {
-  src: string;
+  src: ImageProps["src"];
   alt: string;
-  className?: string;
 };
 
-export const Photo = ({ src, alt, className }: PhotoProps) => {
+export const Photo = ({ src, alt }: PhotoProps) => {
   return (
-    <>
+    <PhotoEnlarge>
       <Image
+        fill
         src={src}
         alt={alt}
-        width={700}
-        height={700}
+        placeholder="blur"
+        sizes="(max-width: 500px) 300px, 700px"
         quality={100}
-        className={cn("absolute inset-0 w-full h-full object-cover", className)}
+        className="object-cover"
       />
-      <PhotoEnlarge src={src} />
-    </>
+    </PhotoEnlarge>
   );
 };

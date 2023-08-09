@@ -28,11 +28,11 @@ export const TELADDR = "+3107910118";
 const EMAIL = "saisonaoyama@gmail.com";
 
 const FAQLIST = [
-  "wifi available",
-  "no walk-ins",
-  "appointment only",
-  "closed on national holidays",
-];
+  "wifi-available",
+  "no-walk-ins",
+  "appointment-only",
+  "closed-on-national-holdiays",
+] as const;
 
 type SocialsInfo = {
   name: string;
@@ -116,7 +116,7 @@ export const Footer = ({ dictionary: t }: { dictionary: Dictionary }) => {
   return (
     <div
       id="footer"
-      className="w-full bg-zinc-100 dark:text-zinc-500 dark:bg-zinc-800/20 scroll-mt-20"
+      className="w-full bg-zinc-100 dark:text-zinc-500 dark:bg-zinc-800/20 scroll-mt-24"
     >
       <nav className="pack-content w-full flex flex-col min-h-[20rem] py-[4rem] px-[2rem]">
         <div className="w-full flex flex-col pb-[3rem] gap-20 items-center">
@@ -226,25 +226,11 @@ export const Footer = ({ dictionary: t }: { dictionary: Dictionary }) => {
             <div className="flex flex-col gap-4">
               {sectionH(faq)}
               <ul className="text-sm w-[15rem] flex flex-col gap-2">
-                {/* {FAQLIST.map((faq, index) => {
-                  return (
-                    <li key={faq} className="capitalize">
-                      {faq}
-                    </li>
-                  );
-                })} */}
-                <li key={faq} className="capitalize">
-                  {wifiAvailable}
-                </li>
-                <li key={faq} className="capitalize">
-                  {noWalkIns}
-                </li>
-                <li key={faq} className="capitalize">
-                  {appointmentOnly}
-                </li>
-                <li key={faq} className="capitalize">
-                  {closedOnNationalHolidays}
-                </li>
+                {FAQLIST.map((faq, index) => (
+                  <li key={faq} className="capitalize">
+                    {s[faq]}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

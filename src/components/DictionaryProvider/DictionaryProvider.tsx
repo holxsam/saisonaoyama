@@ -1,7 +1,7 @@
 "use client";
 
 import { Dictionary } from "@/app/[lang]/layout";
-import { createContext, createServerContext, useContext } from "react";
+import { createContext, useContext } from "react";
 
 export const DictionaryContext = createContext<Dictionary | null>(null);
 

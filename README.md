@@ -1,6 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Demo
 
-## Getting Started
+This is a demo of marketing site for a hair salon I built for a prospective client. You can view the live demo at [saisonaoyama-demo.vercel.app](https://saisonaoyama-demo.vercel.app/). It features i18n for English and Japanese users and a lovely user interface.
+
+## Development
 
 First, run the development server:
 
@@ -16,19 +18,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Bugs
 
-## Learn More
+### Headless UI
 
-To learn more about Next.js, take a look at the following resources:
+I am specifically using @headlessui/react@1.7.14 (not ^1.7.14 or anything later) because the Popover component currently has a bug where it won't close on clicked outside of the button/panel. This bug only happens in the header where there's a fixed height. If I place the same exact component in the body, it works as intended. This is a bug with @headlessui/react because if you install 1.17.14 or lower, everything works, fine. If you install anything past 1.17.14, it breaks.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Next.js Static Assets
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Also next.js static asset does not work as of next@^13.4.13.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Creating an image with next/image like so: `<Image src="/assets/photos/a.png">` will not link `/assets/photos/a.png` to `/public/assets/photos/a.png` as the docs have suggested so I had to manually import every image which is not ideal.

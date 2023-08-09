@@ -10,17 +10,17 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 const links: NavItem[] = [
-  { key: "gallery", href: "/#gallery", icon: null },
-  { key: "testimonials", href: "/#testimonials", icon: null },
-  { key: "about", href: "/#about", icon: null },
-  { key: "contact", href: "/#footer", icon: null },
-  { key: "services", href: "/services", icon: null },
+  { key: "gallery", href: "/#gallery", icon: null, scroll: true },
+  { key: "testimonials", href: "/#testimonials", icon: null, scroll: true },
+  { key: "about", href: "/#about", icon: null, scroll: true },
+  { key: "contact", href: "/#footer", icon: null, scroll: true },
+  { key: "services", href: "/services", icon: null, scroll: false },
 ];
 
 const unScrolled =
   "backdrop-blur-none border-b border-transparent bg-transparent";
 const scrolled =
-  "backdrop-blur-lg border-b border-zinc-100/80 dark:border-white/[8%] bg-white/80 dark:bg-zinc-900/80  ";
+  "backdrop-blur-lg border-b border-zinc-100/80 dark:border-white/[8%] bg-white/80 dark:bg-zinc-900/80";
 
 export const NavBar = () => {
   const pathname = usePathname();
@@ -30,18 +30,24 @@ export const NavBar = () => {
   const bgColor = isScrolled ? scrolled : unScrolled;
 
   useEffect(() => {
-    const scrollContainer = document.body;
+    const scrollContainer = document.documentElement;
+
     const updateBgColor = () =>
       setIsScrolled(scrollContainer.scrollTop > boundary);
     updateBgColor(); // call it once to start because it is possible to be scrolled down on a page load cus of SSR
-    scrollContainer.addEventListener("scroll", updateBgColor);
+    window.addEventListener("scroll", updateBgColor);
     return () => {
-      scrollContainer.removeEventListener("scroll", updateBgColor);
+      window.removeEventListener("scroll", updateBgColor);
     };
   }, [boundary]);
 
+  useEffect(() => {
+    if (pathname.includes("services"))
+      window.scrollTo({ top: 0, behavior: "instant" });
+  }, [pathname]);
+
   return (
-    <div className="isolate h-16">
+    <div className="relative isolate h-16">
       {/* 
       Using the div below as the background so that backdrop-filter works here AND in the mobile nav menu. 
       This bug is caused if you apply backdrop-filter to nested elements. 
@@ -56,11 +62,9 @@ export const NavBar = () => {
       />
 
       <div className="flex justify-between items-center pack-content h-full">
-        <div className="flex gap-2">
-          <Link href="/">
-            <Logo />
-          </Link>
-        </div>
+        <Link href="/" className="relative z-10">
+          <Logo />
+        </Link>
 
         <nav className="flex gap-0 sm:gap-4">
           <ThemeSwitch className="z-10" />

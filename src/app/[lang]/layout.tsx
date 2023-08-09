@@ -13,16 +13,14 @@ import DictionaryProvider from "@/components/DictionaryProvider/DictionaryProvid
 const baseFont = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  // adjustFontFallback: false,
 });
 
 const monoFont = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains_mono",
-  // adjustFontFallback: false,
 });
 
-// this is just the variables (not actually applying the fonts) (we apply it in globals.css)
+// this is just the variables (not actually applying the fonts) (we apply it in the root layout)
 const customFonts = [baseFont.variable, monoFont.variable].join(" ");
 
 export const metadata: Metadata = {
@@ -50,18 +48,13 @@ export default async function RootLayout({
   return (
     <html
       lang={lang}
-      className={cn(
-        customFonts,
-        // layout defaults:
-        "flex flex-col h-full overflow-hidden"
-      )}
+      className={cn(customFonts, "!scroll-smooth")}
       suppressHydrationWarning // see https://github.com/pacocoursey/next-themes/issues/152#issuecomment-1364280564 for details
     >
       <body
-        // className="relative isolate bg-white dark:bg-neutral-800 m-0"
         className={cn(
           // layout defaults:
-          "relative flex flex-col flex-1 overflow-x-hidden overflow-y-scroll isolate scroll-smooth",
+          "relative flex flex-col isolate",
           // style defaults:
           "font-base",
           // light:

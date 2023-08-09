@@ -1,4 +1,4 @@
-import { HeroSection } from "@/components/Hero/Hero";
+import { HeroSection } from "@/components/Hero/HeroSection";
 import { ImageGallery } from "@/components/ImageGallery/ImageGallery";
 import { TestimonialList } from "@/components/TestimonialList/TestimonialList";
 import { getDictionary } from "../../../get-dictionary";
@@ -18,14 +18,14 @@ export default async function Home({ params }: { params: LParam }) {
   const aboutDesc = t["about-header-desc"];
 
   return (
-    <div className="isolate flex flex-col gap-28 pb-16">
+    <div className="isolate flex flex-col gap-28 pb-32">
       <HeroSection dictionary={t} />
 
       <div className="pack-content flex flex-col gap-12">
         <div className="flex flex-col items-center gap-4">
           <h2
             id="gallery"
-            className="scroll-mt-20 text-5xl font-extrabold capitalize w-min whitespace-nowrap text-zinc-800 dark:text-zinc-50"
+            className="scroll-mt-24 text-5xl font-extrabold capitalize w-min whitespace-nowrap text-zinc-800 dark:text-zinc-50"
           >
             {gallery}
           </h2>
@@ -33,7 +33,7 @@ export default async function Home({ params }: { params: LParam }) {
             {galleryDesc}
           </p>
         </div>
-        <ImageGallery dictionary={t} />
+        <ImageGallery />
       </div>
 
       <div className="relative isolate flex flex-col gap-12 bg-gradient-to-br from-red-500 to-blue-500 pt-20">
@@ -41,7 +41,7 @@ export default async function Home({ params }: { params: LParam }) {
         <div className="pack-content flex flex-col items-center gap-4">
           <h2
             id="testimonials"
-            className="scroll-mt-20 text-5xl font-extrabold capitalize w-min whitespace-nowrap text-white"
+            className="scroll-mt-24 text-5xl font-extrabold capitalize w-min whitespace-nowrap text-white"
           >
             {testimonials}
           </h2>
@@ -49,14 +49,14 @@ export default async function Home({ params }: { params: LParam }) {
             {testimonialDesc}
           </p>
         </div>
-        <TestimonialList dictionary={t} />
+        <TestimonialList />
       </div>
 
       <div className="pack-content flex flex-col gap-28">
         <div className="flex flex-col items-center gap-4">
           <h2
             id="about"
-            className="scroll-mt-20 text-5xl font-extrabold capitalize w-min whitespace-nowrap text-zinc-800 dark:text-zinc-50"
+            className="scroll-mt-24 text-5xl font-extrabold capitalize w-min whitespace-nowrap text-zinc-800 dark:text-zinc-50"
           >
             {about}
           </h2>
