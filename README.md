@@ -1,6 +1,6 @@
 # Demo
 
-This is a demo of marketing site for a hair salon I built for a prospective client. You can view the live demo at [saisonaoyama-demo.vercel.app](https://saisonaoyama-demo.vercel.app/). It features i18n for English and Japanese users and a lovely user interface.
+This is a demo of marketing site for a hair salon I built for a prospective client. You can view the live demo at [saisonaoyama.vercel.app](https://saisonaoyama.vercel.app/). It features i18n for English and Japanese users and a lovely user interface.
 
 ## Development
 
